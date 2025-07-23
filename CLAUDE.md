@@ -1,40 +1,43 @@
-# COA-GPT Website Documentation
+# Red Dot Website Documentation
 
 ## Project Overview
-COA-GPT is a tech startup website for an AI-powered military planning solution. The site features a modern, dark-themed design with golden accents and professional animations.
+Red Dot is a community-driven anonymous reporting system for real-time safety alerts. The website showcases this cross-platform mobile application with a modern, dark-themed design featuring red accents and professional animations.
 
 ## Tech Stack
 - **HTML5** - Semantic markup
 - **CSS3** - Custom styling with CSS variables
 - **Vanilla JavaScript** - Animations and interactions
 - **Font**: Inter (Google Fonts)
-- **Hosting**: Netlify
-- **Domain**: coa-gpt.com (via Squarespace)
+- **Hosting**: TBD (Netlify/Vercel recommended)
+- **Domain**: TBD (reddotapp.com suggested)
 
 ## Color Scheme
 ```css
---primary-color: #E6B41A;      /* Golden yellow */
---secondary-color: #B38F14;    /* Darker gold for hover */
---accent-color: #F0C64D;       /* Light gold accent */
---text-primary: #f3f4f6;       /* Light gray text */
---text-secondary: #d1d5db;     /* Medium gray text */
---bg-primary: #0a0a0a;         /* Near black background */
+--primary-color: #DC2626;      /* Red */
+--primary-hover: #B91C1C;      /* Darker red */
+--primary-light: #EF4444;      /* Light red */
+--accent-color: #F87171;       /* Light red accent */
+--text-primary: #F3F4F6;       /* Light gray text */
+--text-secondary: #D1D5DB;     /* Medium gray text */
+--text-tertiary: #9CA3AF;      /* Dark gray text */
+--bg-primary: #0A0A0A;         /* Near black background */
 --bg-secondary: #111111;       /* Slightly lighter black */
---bg-tertiary: #1a1a1a;        /* Card backgrounds */
+--bg-tertiary: #1A1A1A;        /* Card backgrounds */
 ```
 
 ## Project Structure
 ```
-coa-gpt-website/
+red_dot-website/
 ├── index.html              # Main HTML file
 ├── css/
 │   └── styles.css         # All styling
 ├── js/
 │   └── main.js           # Animations & interactions
 ├── images/
-│   ├── favicon_white.png  # Site favicon
-│   ├── coa-gpt_logo_dark.png  # Main logo
-│   └── UI_shots_so.png   # Product mockup
+│   ├── favicon.png        # Site favicon (to be added)
+│   ├── app-mockup.png     # Phone mockup (to be added)
+│   ├── app-store-badge.png   # iOS badge (to be added)
+│   └── google-play-badge.png  # Android badge (to be added)
 ├── sitemap.xml           # SEO sitemap
 ├── robots.txt            # Search engine directives
 └── CLAUDE.md            # This file
@@ -43,9 +46,9 @@ coa-gpt-website/
 ## Key Design Patterns
 
 ### Logo Implementation
-- Navigation and footer use a combined logo (icon + text)
-- Icon appears AFTER text logo (reversed from typical order)
-- Both elements fade on hover together
+- Simple text logo with red dot (•) as accent
+- Hover effect transitions text to red color
+- Consistent across navigation and footer
 
 ### Section Structure
 Each major section follows this pattern:
@@ -62,30 +65,30 @@ Each major section follows this pattern:
 ```
 
 ### Animation Patterns
-1. **Fade-in on scroll** - Applied to cards and sections
-2. **Floating animation** - Tech cards with 6s infinite loop
-3. **Counter animation** - Stats count up over 1 second
-4. **Parallax scrolling** - Hero section elements
+1. **Fade-in on scroll** - Applied to feature cards and steps
+2. **Floating animation** - Alert cards with staggered 6s loops
+3. **Counter animation** - Stats count up over 2 seconds
+4. **Parallax scrolling** - Hero section with opacity fade
 
 ### Typography Scale
 - Hero title: 3.5rem
-- Section headers: 2.5rem  
-- Card titles: 1.5rem
+- Section headers: 2.5rem
+- Card titles: 1.5rem / 1.25rem
 - Body text: 1.125rem
-- Small text: 0.95rem
+- Small text: 0.95rem / 0.875rem
 
 ## JavaScript Features
 
 ### Smooth Scrolling
-All anchor links use smooth scrolling behavior.
+All anchor links use smooth scrolling with offset for fixed navbar.
 
 ### Navbar Effects
 - Background opacity changes on scroll (0.95 → 0.98)
-- Mobile menu toggle with hamburger animation
+- Mobile menu toggle with animated hamburger icon
 
 ### Stat Counter Animation
 ```javascript
-animateStat(element, duration = 1000)
+animateValue(element)
 ```
 Animates numbers from 0 to target value when scrolled into view.
 
@@ -93,7 +96,7 @@ Animates numbers from 0 to target value when scrolled into view.
 Used for:
 - Fade-in animations on scroll
 - Triggering stat counter animations
-- Performance-optimized (only animates visible elements)
+- Lazy loading images (prepared for implementation)
 
 ## SEO Implementation
 
@@ -101,47 +104,67 @@ Used for:
 - Description, keywords, author
 - Open Graph tags for social sharing
 - Twitter Card tags
-- Canonical URL
-- Structured data (Schema.org)
+- Placeholder canonical URL
 
 ### Search Engine Files
-- `sitemap.xml` - Lists all pages
+- `sitemap.xml` - Lists main page sections
 - `robots.txt` - Allows all crawlers
 
 ## Responsive Design
 - Mobile breakpoint: 768px
-- Mobile navigation: Hamburger menu
+- Mobile navigation: Full-screen overlay menu
 - Grid layouts collapse to single column
-- Product showcase reorders (image first on mobile)
+- Hero section stacks vertically on mobile
+- Floating alerts hidden on mobile for clarity
 
 ## Custom Components
 
-### Floating Cards
-Used in hero section with staggered animations and continuous float effect.
+### Floating Alert Cards
+Three animated alerts showcasing real-time notification concept with emoji icons.
 
-### Tech Stats Cards
-Centered layout with animated counters showing "10x" and "25x" metrics.
+### Feature Cards
+6 cards with hover effects highlighting:
+- Anonymous Reporting
+- Real-Time Alerts
+- Location-Based
+- Community Driven
+- Verified Reports
+- Cross-Platform
 
-### Showcase Section
-Split layout with text on left, tilted product mockup on right (-15deg → 0deg on hover).
+### Safety Stats
+Animated counters showing:
+- 50,000 Active Users
+- 10,000 Reports Submitted
+- 95% User Satisfaction
+- 24/7 Monitoring
 
 ## Deployment Notes
-- Hosted on Netlify
-- Auto-deploys from GitHub
-- SSL certificate provided by Netlify
-- DNS: A record pointing to 75.2.60.5
+- Ready for static hosting (Netlify, Vercel, GitHub Pages)
+- No backend required for current version
+- SSL certificate recommended
+- Domain suggestion: reddotapp.com
+
+## Required Assets
+The following images need to be added:
+1. `favicon.png` - Red dot icon for browser tab
+2. `app-mockup.png` - Phone mockup showing app interface
+3. `app-store-badge.png` - Official App Store download badge
+4. `google-play-badge.png` - Official Google Play download badge
+5. `og-image.png` - Social media preview image (1200x630px)
 
 ## Future Considerations
-- Add blog functionality for content marketing
-- Implement contact form backend
-- Add more product screenshots/demos
-- Consider adding customer testimonials section
-- Add analytics tracking (Google Analytics)
+- Add actual app store links when available
+- Implement contact form with backend
+- Add privacy policy and terms of service pages
+- Consider adding user testimonials section
+- Add analytics tracking (Google Analytics/Plausible)
+- Implement actual lazy loading for images
+- Add more app screenshots/feature demonstrations
 
 ## Common Tasks
 
 ### Update Stats
-Edit the numbers in `.tech-stat h3` elements in index.html
+Edit the numbers in `.stat-number` elements' `data-target` attributes in index.html
 
 ### Change Colors
 Modify CSS variables in `:root` section of styles.css
@@ -151,7 +174,8 @@ Modify CSS variables in `:root` section of styles.css
 2. Add corresponding CSS in styles.css
 3. Add to observer in main.js for animations
 
-### Update SEO
-- Meta descriptions in `<head>`
-- Update sitemap.xml with new pages
-- Modify structured data as needed
+### Update App Store Links
+Replace `#` in download links with actual store URLs when available
+
+### Add Screenshots
+Place images in `/images/` folder and update `src` attributes in HTML
