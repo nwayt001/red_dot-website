@@ -286,10 +286,12 @@ img {
 
 .mockup-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     display: block;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    background-color: transparent;
+    background: none !important;
+    /*filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));*/
 }
 
 .floating-alerts {
@@ -509,7 +511,7 @@ img {
 /* Download Section */
 .download {
     padding: 80px 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    background: #8B0000; /*linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-hover) 100%);*/
     text-align: center;
 }
 
@@ -656,6 +658,66 @@ img {
     .footer-links {
         grid-template-columns: 1fr;
     }
+}
+
+/* Beta Styles */
+.beta-info {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: rgba(220, 38, 38, 0.1);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.beta-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.email-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.email-link:hover {
+    color: var(--primary-light);
+}
+
+.beta-cta {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--bg-tertiary);
+    border-radius: 12px;
+    margin: 2rem 0;
+}
+
+.beta-cta h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.beta-cta p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+.email-display {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--text-tertiary);
+    font-family: monospace;
 }
 
 /* Animations */
