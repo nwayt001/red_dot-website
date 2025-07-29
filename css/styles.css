@@ -628,7 +628,15 @@ img {
     }
     
     .hero-visual {
-        margin-top: 2rem;
+        margin-top: 1rem;
+    }
+    
+    .hero-cta {
+        margin-bottom: 1.5rem;
+    }
+    
+    .platform-info {
+        margin-bottom: 0;
     }
     
     .phone-mockup {
