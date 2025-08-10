@@ -86,6 +86,13 @@ img {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
+    gap: 0.5rem;
+}
+
+.logo-image {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
 }
 
 .logo-text {
@@ -207,6 +214,18 @@ img {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .highlight {
@@ -625,6 +644,12 @@ img {
     
     .hero-title {
         font-size: 2.5rem;
+        justify-content: center;
+    }
+    
+    .hero-logo {
+        width: 32px;
+        height: 32px;
     }
     
     .hero {
@@ -744,6 +769,36 @@ img {
     font-size: 1rem;
     color: var(--text-tertiary);
     font-family: monospace;
+}
+
+/* Download Badges */
+.download-badges {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.app-store-badge {
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.app-store-badge:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.app-store-badge img {
+    height: 60px;
+    width: auto;
+}
+
+.coming-soon-badge {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Platform Badges */
