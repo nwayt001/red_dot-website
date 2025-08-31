@@ -796,9 +796,21 @@ img {
     width: auto;
 }
 
-.coming-soon-badge {
-    display: inline-flex;
-    align-items: center;
+.google-play-badge {
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.google-play-badge:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.google-play-badge img {
+    height: 60px !important;
+    width: auto !important;
+    max-width: 200px;
+    display: block;
 }
 
 /* Platform Badges */
