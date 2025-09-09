@@ -194,8 +194,97 @@ forms.forEach(form => {
     });
 });
 
+// Donation-related functions
+function toggleCryptoAddresses() {
+    const cryptoAddresses = document.getElementById('crypto-addresses');
+    const cryptoBtn = document.querySelector('.crypto-btn');
+    
+    if (cryptoAddresses.style.display === 'none' || cryptoAddresses.style.display === '') {
+        cryptoAddresses.style.display = 'block';
+        cryptoBtn.textContent = 'Hide Crypto Addresses';
+    } else {
+        cryptoAddresses.style.display = 'none';
+        cryptoBtn.textContent = 'Show Crypto Addresses';
+    }
+}
+
+// Copy to clipboard functionality
+function copyToClipboard(element) {
+    const text = element.textContent;
+    
+    // Create temporary textarea to copy text
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+    // Visual feedback
+    const originalText = element.textContent;
+    element.textContent = 'Copied!';
+    element.style.background = 'var(--primary-color)';
+    element.style.color = 'white';
+    
+    setTimeout(() => {
+        element.textContent = originalText;
+        element.style.background = '';
+        element.style.color = '';
+    }, 2000);
+}
+
+// Observe support section for animations
+const supportSection = document.querySelector('.support-section');
+if (supportSection) {
+    const supportElements = supportSection.querySelectorAll('.support-info, .donation-options');
+    supportElements.forEach(element => {
+        element.classList.add('fade-in');
+        observer.observe(element);
+    });
+}
+
+// Thank You Modal functions
+function showThankYouModal() {
+    const modal = document.getElementById('thankYouModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeThankYouModal() {
+    const modal = document.getElementById('thankYouModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
+// Check URL parameters for thank you redirect
+function checkForThankYou() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('thankyou') === 'true') {
+        showThankYouModal();
+        // Clean up URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+}
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     // Add any initialization code here
     console.log('Red Dot website loaded');
+    
+    // Add click handlers for crypto addresses
+    document.querySelectorAll('.address').forEach(address => {
+        address.addEventListener('click', function() {
+            copyToClipboard(this);
+        });
+    });
+    
+    // Check if we should show thank you modal
+    checkForThankYou();
 });
