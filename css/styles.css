@@ -1011,37 +1011,20 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-weight: 600;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.coffee-btn {
-    background: linear-gradient(135deg, #ff9800, #ff6f00);
-    color: white;
+.donation-btn-image {
+    max-width: 250px;
+    height: auto;
+    display: block;
 }
 
-.coffee-btn:hover {
+.kofi-btn:hover, .paypal-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
-}
-
-.paypal-btn {
-    background: linear-gradient(135deg, #0070ba, #003087);
-    color: white;
-}
-
-.paypal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 112, 186, 0.3);
-}
-
-.coffee-icon, .paypal-icon {
-    width: 24px;
-    height: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .crypto-donation {
